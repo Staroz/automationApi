@@ -6,9 +6,9 @@ module.exports = defineConfig({
   viewportWidth: 1200,
   viewportHeight: 660,
   experimentalModifyObstructiveThirdPartyCode: true,
-  e2e: {
+    e2e: {
     experimentalSessionAndOrigin: true,
-    baseUrl: 'https://trello.com/home',
+    baseUrl:"https://api.trello.com/1/boards/",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
