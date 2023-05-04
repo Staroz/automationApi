@@ -1,4 +1,3 @@
 node_modules
 .idea
-fixtures/
-credentials.json
+cypress\fixtures/
