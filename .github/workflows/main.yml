@@ -6,6 +6,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Decrypt GPG file
+        run: |
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PASSWORD }}" --output E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json credentials.json.gpg
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
