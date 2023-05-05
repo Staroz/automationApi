@@ -12,6 +12,6 @@ jobs:
       run: |
         openssl aes-256-cbc -d -salt -in E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentialsEnc.json.enc -out E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json -k ${{ secrets.PASSWORD_ENC }}
     - name: Utilizar archivo desencriptado
-      run: cat credentials.json
+      run: cat E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json
     - name: Cypress run
       uses: cypress-io/github-action@v5

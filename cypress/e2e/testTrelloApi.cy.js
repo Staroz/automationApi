@@ -2,7 +2,7 @@
 
 describe("Boards manipulation whit API", function() {
 	before('Create a new Board in Trello', function() {
-        cy.fixture('credentials.json').then(function(value) {
+        cy.fixture('credentials.json.enc').then(function(value) {
             const token = value.token;
             const key = value.key;
 			const boardName = value.boardName;
@@ -13,7 +13,7 @@ describe("Boards manipulation whit API", function() {
     
     it('Update board name', function() {
         
-        cy.fixture('credentials.json').then(function(value) {
+        cy.fixture('credentialsEnc.json.enc').then(function(value) {
             const token = value.token;
             const key = value.key;
             const newBoardName = value.newBoardName;
@@ -23,7 +23,7 @@ describe("Boards manipulation whit API", function() {
     });
     
     after('Delete the Board created',()=>{
-        cy.fixture('credentials.json').then(function(value) {
+        cy.fixture('credentials.json.enc').then(function(value) {
             const token = value.token;
             const key = value.key;
             

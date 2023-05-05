@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Decrypt GPG file
         run: |
-          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PASSWORD }}" --output E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json credentials.json.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PASSWORD }}" --output E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json.gpg
         env:
           PASSWORD: ${{ secrets.PASSWORD }}
       # Install npm dependencies, cache them correctly
