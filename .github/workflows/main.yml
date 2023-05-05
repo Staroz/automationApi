@@ -9,8 +9,10 @@ jobs:
       - name: Decrypt GPG file
         run: |
           gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PASSWORD }}" --output E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json E:/AUTOMATION TRAINING/automationApi/cypress/fixtures/credentials.json.gpg
-        env:
+          shell: /usr/bin/bash -e {0}
+          env:
           PASSWORD: ${{ secrets.PASSWORD }}
+          usage: gpg [options] --decrypt [credentials.json.gpg]
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
